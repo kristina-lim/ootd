@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OOTD</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+</head>
+<body>
+    <nav>
+        <img src="/images/camera.svg">
+        <a href="/outfits" <%- title === 'Homepage' ? 'class="active"' : '' %>>HOMEPAGE</a>
+        <% if (user) { %>
+            <!-- <a href="/outfits"	<%- title === 'My Outfits' ? 'class="active"' : '' %>>
+            MY OUTFITS</a> -->
+            <a href="/outfits/new" <%- title === 'Add Outfit' ? 'class="active"' : '' %>>ADD A POST</a>
+            <a href="/logout">LOG OUT</a>
+        <% } else { %>
+            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <% } %>
+    </nav>
+      <!-- homepage, my posts, add a post -->
