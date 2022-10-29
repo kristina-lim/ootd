@@ -1,0 +1,65 @@
+<h2>Enter a New Fit</h2>
+<form action="/outfits" method="POST">
+    <div id="title">
+        <label>Title:</label>
+        <input type="text" name="title"><br>
+    </div>
+    <!-- <label>for img but we go back to it later</label> -->
+    <label>What did you do today?</label><br>
+    <textarea name="body" cols="20" rows="5">Type what you did throughout the day</textarea><br>
+    <label>Write a description of your fit:</label><br>
+    <textarea name="body" cols="20" rows="5">What brands did you wear?</textarea><br>
+    <label>Sizing (optional):</label><br>
+    <label>Outerwear
+        <select name="outerwear">
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+        </select>
+    </label><br>
+    <label>Top
+        <select name="top">
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+        </select>
+    </label><br>
+    <label>Bottom (women's size)
+        <select name="bottom">
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+        </select>
+    </label>
+    <label>Bottom (men's size)
+        <select name="bottom">
+            <option value="26">26</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            <option value="32">32</option>
+            <option value="33">33</option>
+            <option value="34">34</option>
+            <option value="36">36</option>
+            <option value="38">38</option>
+            <option value="40">40</option>
+        </select>
+    </label><br>
+    <label>When did you wear this?
+        <input type="date" name="date" value="<%= dtDate %>">
+    </label><br>
+    <input type="submit" value="Add Outfit!">
+</form>
