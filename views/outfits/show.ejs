@@ -1,0 +1,76 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <div>Title</div> 
+    <div><%= outfit.title %></div>
+    <div><img class="login" src="<%= o.image %>"></div>
+    <div>What did you do today?</div>
+    <div><%= outfit.agenda %></div>
+    <div>A description of your fit</div>
+    <div><%= outfit.description %></div>
+    <div>Outerwear</div>
+    <div><%= outfit.outerwear %></div>
+    <div>Top</div>
+    <div><%= outfit.top %></div>
+    <div>Bottom</div>
+    <div><%= outfit.bottom %></div>
+    <div>Date Worn</div>
+    <div><%= outfit.date %></div>
+</section>
+
+<h2>Comment</h2>
+<% if (user) { %>
+    <form id="add-comment-form" method="POST"
+        action="/outfits/<%= outfit._id %>/comments">
+        <label>Comment:</label>
+        <textarea name="content"></textarea>
+        <label>Rating:</label>
+        <select name="rating">
+            <option value="👍">👍</option>
+            <option value="😍">😍</option>
+            <option value="🤩">🤩</option>
+            <option value="🥳">🥳</option>
+            <option value="🫶" selected>🫶</option>
+            <option value="🤤">🤤</option>
+            <option value="😊">😊</option>
+            <option value="👎">👎</option>
+        </select>
+        <input type="submit" value="Add Comment">
+    </form>
+<% } %>
+
+<% if (outfit.comments.length) { %>
+    <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Date</th>
+            <th>Comment</th>
+            <th>Rating</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% let total = 0 %>
+          <% outfit.comments.forEach(function(c) { %>
+            <% total += c.rating %>
+            <tr>
+              <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer"> <%= c.userName %></td>
+              <td><%= c.createdAt.toLocaleDateString() %></td>
+              <td><%= c.content %></td>
+              <td><%= c.rating %></td>
+              <td>
+                <% if (user?._id.equals(c.user)) { %>
+                  <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                  </form>
+                <% } %>
+              </td>
+            </tr>
+          <% }); %>
+          <% } else { %>
+            <h5>No Comments Yet</h5>
+        </tbody>
+<% } %>
+
+<%- include('../partials/footer') %>
