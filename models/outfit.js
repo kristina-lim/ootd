@@ -8,7 +8,8 @@ const commentSchema = new Schema({
     },
     rating: {
         type: String,
-        enum: ['👍', '😍', '🤩', '🥳', '🫶', '🤤',  '😊', '👎']
+        enum: ['👍', '😍', '🤩', '🥳', '🫶', '🤤',  '😊', '👎'],
+        required: true
     },
     user: {
         type: Schema.Types.ObjectId,

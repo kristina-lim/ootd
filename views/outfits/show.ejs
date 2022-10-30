@@ -54,9 +54,7 @@
           </tr>
         </thead>
         <tbody>
-          <% let total = 0 %>
           <% outfit.comments.forEach(function(c) { %>
-            <% total += c.rating %>
             <tr>
               <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer"> <%= c.userName %></td>
               <td><%= c.createdAt.toLocaleDateString() %></td>
