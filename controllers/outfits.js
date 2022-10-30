@@ -10,7 +10,7 @@ module.exports = {
 function show(req, res) {
     Outfit.findById(req.params.id, function(err, outfit) {
         res.render('outfits/show', {
-            title: 'Outfit Detail',
+            title: 'Outfit Details',
             outfit
         });
     });
@@ -20,8 +20,7 @@ function create(req, res) {
     const outfit = new Outfit(req.body);
     outfit.save(function(err) {
         if (err) return res.redirect('/outfits/new');
-        console.log(outfit);
-        res.redirect('/outfits/new');
+        res.redirect('/outfits');
     });
 }
 

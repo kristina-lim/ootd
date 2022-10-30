@@ -29,7 +29,7 @@ const outfitSchema = new Schema({
     image: {
         type: String,
         data: Buffer,
-        required: true
+        // required: true
     },
     agenda: {
         type: String,
@@ -39,23 +39,31 @@ const outfitSchema = new Schema({
         type: String,
         required: true
     },
-    outerwear: {
+    mood: {
         type: String,
-        enum: ['XS', 'S', 'M', 'L', 'XL']
-    },
-    top: {
-        type: String,
-        enum: ['XS', 'S', 'M', 'L', 'XL']
-    },
-    bottom: {
-        type: String,
-        enum: ['N/A', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33'],
-        enum: ['N/A', '26', '28', '29', '30', '31', '32', '33', '34', '36', '38', '40']
+        enum: ['😊', '🥹', '🤪', '😍', '😤', '😭', '🫠', '🤒'],
+        required: true
     },
     date: {
         type: Date,
         default: Date.now(),
         required: true
+    },
+    outerwear: {
+        type: String,
+        enum: ['N/A', 'XS', 'S', 'M', 'L', 'XL']
+    },
+    top: {
+        type: String,
+        enum: ['N/A', 'XS', 'S', 'M', 'L', 'XL']
+    },
+    womBottom: {
+        type: String,
+        enum: ['N/A', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33']
+    },
+    manBottom: {
+        type: String,
+        enum: ['N/A', '26', '28', '29', '30', '31', '32', '33', '34', '36', '38', '40']
     },
     comments: [commentSchema]
 }, {
