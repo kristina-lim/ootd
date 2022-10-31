@@ -11,5 +11,8 @@ router.get('/new', ensureLoggedIn, outfitsCtrl.new);
 router.get('/:id', outfitsCtrl.show);
 //POST /outfits
 router.post('/', ensureLoggedIn, outfitsCtrl.create);
+//EDIT /outfits/:id/edit
+router.get('/:id/edit', ensureLoggedIn, outfitsCtrl.edit);
+// router.put('/:id', ensureLoggedIn, outfitsCtrl.update);
 
 module.exports = router;
