@@ -2,30 +2,15 @@
 
 <form id="edit-form" action="/outfits/<%= outfit._id%>?_method=PUT" method="POST">
     <label>Title:</label>
-    <input type="text" name="title" value="<%= title %>"><br>
+    <input type="text" name="title" value="<%= title %>"><br><br>
     <!-- <label>Add Image:</label>
     <input type="text" name="image">
     <input type="submit" value="submit"><br> -->
     <!-- <label>for img but i go back to it later</label> -->
-    <label>What did you do today?</label><br>
+    <label>What did you do today?</label><br><br>
     <textarea name="agenda" cols="20" rows="5" placeholder="<%= outfit.agenda %>"></textarea><br>
     <label>Write a description of your fit:</label><br>
     <textarea name="description" cols="20" rows="5" placeholder="<%= outfit.description %>"></textarea><br><br>
-    <label>Mood
-        <select name="mood" value="<%= outfit.mood %>">
-            <option value="😊">😊</option>
-            <option value="🥹">🥹</option>
-            <option value="🤪">🤪</option>
-            <option value="😍">😍</option>
-            <option value="😤">😤</option>
-            <option value="😭">😭</option>
-            <option value="🫠">🫠</option>
-            <option value="🤒">🤒</option>
-        </select>
-    </label><br>
-    <label>When did you wear this?
-        <input type="date" name="date" value="<%= outfit.date %>">
-    </label><br><br>
     <label>Sizing (optional):</label><br>
     <label>Outerwear
         <select name="outerwear">

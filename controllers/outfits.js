@@ -6,44 +6,45 @@ module.exports = {
     create,
     show,
     edit,
-    // update
+    update
 }
 
-// function update(req, res) {
-//     Outfit.findOneAndUpdate({
-//         _id: req.params.id,
-//     },
-//     {
-//         $set: {
-//             title: req.body.title,
-//             agenda: req.body.agenda,
-//             description: req.body.description,
-//             mood: req.body.mood,
-//             date: req.body.date,
-//             outerwear: req.body.outerwear,
-//             top: req.body.top,
-//             womBottom: req.body.womBottom,
-//             manBottom: req.body.manBottom
-//         }
-//     },
-//     {
-//         new: true
-//     }, function(err, outfit) {
-//         if (!err) {
-//             res.render('/outfits/edit', {
-//                 title: outfit.title,
-//                 agenda: outfit.agenda,
-//                 description: outfit.description,
-//                 mood: outfit.mood,
-//                 date: outfit.date,
-//                 outerwear: outfit.outerwear,
-//                 top: outfit.top,
-//                 womBottom: outfit.womBottom,
-//                 manBottom: outfit.manBottom
-//             });
-//         }
-//     });
-// }
+function update(req, res) {
+    Outfit.findOneAndUpdate({
+        _id: req.params.id,
+    },
+    {
+        $set: {
+            title: req.body.title,
+            agenda: req.body.agenda,
+            description: req.body.description,
+            mood: req.body.mood,
+            date: req.body.date,
+            outerwear: req.body.outerwear,
+            top: req.body.top,
+            womBottom: req.body.womBottom,
+            manBottom: req.body.manBottom
+        }
+    },
+    {
+        new: true
+    }, function(err, outfit) {
+        if (!err) {
+            res.render('/outfits/new', {
+                title: outfit.title,
+                agenda: outfit.agenda,
+                description: outfit.description,
+                mood: outfit.mood,
+                date: outfit.date,
+                outerwear: outfit.outerwear,
+                top: outfit.top,
+                womBottom: outfit.womBottom,
+                manBottom: outfit.manBottom
+            });
+            res.redirect(`/outfits/${outfit._id}`);
+        }
+    });
+}
 
 function edit(req, res) {
     Outfit.findById(req.params.id, function(err, outfit) {
