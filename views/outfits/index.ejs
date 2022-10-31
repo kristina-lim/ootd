@@ -2,15 +2,12 @@
 
 <table id="list">
   <thead>
-    <tr>
-      <th>Title</th>
-      <!-- <th>Release<br>Year</th> -->
-      <th></th>
-    </tr>
+    <h2> </h2>
   </thead>
   <tbody>
     <% outfits.forEach(function(o) { %>
       <tr>
+        <td class="post-user"><img alt="avatar" src="<%= o.userAvatar %>" referrerpolicy="no-referrer"><%= o.userName %></td>
         <td><%= o.title %></td>
         
         <!-- <td><%= o.releaseYear %></td> -->

@@ -66,6 +66,13 @@ const outfitSchema = new Schema({
         type: String,
         enum: ['N/A', '26', '28', '29', '30', '31', '32', '33', '34', '36', '38', '40']
     },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: String,
+    userAvatar: String,
     comments: [commentSchema]
 }, {
     timestamps: true

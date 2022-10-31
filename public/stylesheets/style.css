@@ -28,3 +28,14 @@ a {
   border-radius: 50%;
   height: 40px;
 }
+
+.post-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-user img {
+  border-radius: 50%;
+  height: 40px;
+}
