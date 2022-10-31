@@ -3,7 +3,7 @@
 <section id="show-page">
     <div><h2><%= outfit.title %></h2></div>
     <!-- <div><img class="login" src="<%= outfit.image %>"></div> -->
-    <div>Date Worn: <%= outfit.date %></div><br>
+    <div>Date Worn: <%= outfit.createdAt.toLocaleDateString() %></div><br>
     <div>What did you do today?</div>
     <div><%= outfit.agenda %></div><br>
     <div>A description of your fit</div>
@@ -20,7 +20,6 @@
       <% } %>
     </div>
     <button><a href="/outfits/<%= outfit._id %>/edit">Edit</a></button>
-
 
 <h2>Comments</h2>
 <% if (user) { %>

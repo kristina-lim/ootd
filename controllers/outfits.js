@@ -6,8 +6,24 @@ module.exports = {
     create,
     show,
     edit,
-    update
+    update,
+    // delete: deleteOutfit
 }
+
+// function deleteOutfit(req, res, next) {
+//     Outfit.findOne({
+//         'outfits._id': req.params.id,
+//         'outfits.user': req.user._id
+//     }).then(function(outfit) {
+//         if (!outfit) return res.redirect('/outfits');
+//         outfit.outfits.remove(req.params.id);
+//         outfit.save().then(function() {
+//             res.redirect('/outfits');
+//         }).catch(function(err) {
+//             return next(err);
+//         });
+//     });
+// }
 
 function update(req, res) {
     Outfit.findOneAndUpdate({

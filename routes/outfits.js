@@ -15,5 +15,7 @@ router.post('/', ensureLoggedIn, outfitsCtrl.create);
 router.get('/:id/edit', ensureLoggedIn, outfitsCtrl.edit);
 //UPDATE /outfits/:id
 router.put('/:id', ensureLoggedIn, outfitsCtrl.update);
+//DELETE /outfits/:id
+// router.delete('/:id', ensureLoggedIn, outfitsCtrl.delete);
 
 module.exports = router;
