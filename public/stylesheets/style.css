@@ -18,13 +18,13 @@ a {
   height: 30px;
 }
 
-.review-user {
+.comment-user {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.review-user img {
+.comment-user img {
   border-radius: 50%;
   height: 40px;
 }
