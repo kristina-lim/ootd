@@ -7,23 +7,16 @@ module.exports = {
     show,
     edit,
     update,
-    // delete: deleteOutfit
+    delete: deleteOutfit
 }
 
-// function deleteOutfit(req, res, next) {
-//     Outfit.findOne({
-//         'outfits._id': req.params.id,
-//         'outfits.user': req.user._id
-//     }).then(function(outfit) {
-//         if (!outfit) return res.redirect('/outfits');
-//         outfit.outfits.remove(req.params.id);
-//         outfit.save().then(function() {
-//             res.redirect('/outfits');
-//         }).catch(function(err) {
-//             return next(err);
-//         });
-//     });
-// }
+function deleteOutfit(req, res) {
+    Outfit.findOneAndDelete({
+       _id: req.params.id
+    }, function(err) {    
+        res.redirect('/outfits');
+        });
+}
 
 function update(req, res) {
     Outfit.findOneAndUpdate({
@@ -67,7 +60,7 @@ function edit(req, res) {
         res.render(`outfits/edit`, {
             title: outfit.title,
             outfit
-            });
+        });
     });
 }
 
