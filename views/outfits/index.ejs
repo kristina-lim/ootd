@@ -1,20 +1,12 @@
 <%- include('../partials/header') %>
 
-<table id="list">
-  <thead>
-    <h2> </h2>
-  </thead>
-  <tbody>
-    <% outfits.forEach(function(o) { %>
-      <tr>
-        <td class="post-user"><img alt="avatar" src="<%= o.userAvatar %>" referrerpolicy="no-referrer"><%= o.userName %></td>
-        <td><%= o.title %></td>
-        
-        <!-- <td><%= o.releaseYear %></td> -->
-        <td><a href="/outfits/<%= o._id %>">DETAILS</a></td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
+<div class="container-column">
+  <% outfits.forEach(function(o) { %>
+    <div class="post-user"><img alt="avatar" src="<%= o.userAvatar %>" referrerpolicy="no-referrer"><%= o.userName %></div>
+    <div><%= o.title %></div>
+    <div class="post-image"><img class="image" alt="image" src="<%= o.image %>" width="350" height="250"></div>
+    <div><a href="/outfits/<%= o._id %>">DETAILS</a></div>
+  <% }); %>
+</div>
   
 <%- include('../partials/footer') %>

@@ -3,10 +3,23 @@
 <form id="edit-form" action="/outfits/<%= outfit._id%>?_method=PUT" method="POST">
     <label>Title:</label>
     <input type="text" name="title" value="<%= title %>"><br><br>
-    <label>What did you do today?</label><br>
+    <label for="image">Link your fit: <input type="text" name="image"></label><br>
+    <label>What did you do?</label><br>
     <textarea name="agenda" cols="20" rows="5" placeholder="<%= outfit.agenda %>"></textarea><br>
     <label>Write a description of your fit:</label><br>
     <textarea name="description" cols="20" rows="5" placeholder="<%= outfit.description %>"></textarea><br><br>
+    <label>Mood
+        <select name="mood">
+            <option value="😊">😊</option>
+            <option value="🥹">🥹</option>
+            <option value="🤪">🤪</option>
+            <option value="😍">😍</option>
+            <option value="😤">😤</option>
+            <option value="😭">😭</option>
+            <option value="🫠">🫠</option>
+            <option value="🤒">🤒</option>
+        </select>
+    </label><br>
     <label>Sizing (optional):</label><br>
     <label>Outerwear
         <select name="outerwear">
