@@ -27,11 +27,11 @@ const outfitSchema = new Schema({
         type: String,
         required: true
     },
-    image: {
-        type: String,
-        data: Buffer,
-        required: true
-    },
+    // image: {
+    //     type: String,
+    //     data: Buffer,
+    //     required: true
+    // },
     agenda: {
         type: String,
         required: true

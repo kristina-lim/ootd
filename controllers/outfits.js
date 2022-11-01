@@ -39,39 +39,19 @@ function deleteOutfit(req, res) {
 }
 
 function update(req, res) {
-    Outfit.findOneAndUpdate({
-        _id: req.params.id,
-    },
-    {
-        $set: {
-            title: req.body.title,
-            agenda: req.body.agenda,
-            description: req.body.description,
-            mood: req.body.mood,
-            date: req.body.date,
-            outerwear: req.body.outerwear,
-            top: req.body.top,
-            womBottom: req.body.womBottom,
-            manBottom: req.body.manBottom
-        }
-    },
-    {
-        new: true
-    }, function(err, outfit) {
-        if (!err) {
-            res.render('/outfits/new', {
-                title: outfit.title,
-                agenda: outfit.agenda,
-                description: outfit.description,
-                mood: outfit.mood,
-                date: outfit.date,
-                outerwear: outfit.outerwear,
-                top: outfit.top,
-                womBottom: outfit.womBottom,
-                manBottom: outfit.manBottom
-            });
+    Outfit.findById(req.params.id, function(err, outfit) {
+        outfit.title = req.body.title;
+        outfit.agenda = req.body.agenda;
+        outfit.description = req.body.description;
+        outfit.outerwear = req.body.outerwear;
+        outfit.top = req.body.top;
+        outfit.womBottom = req.body.womBottom;
+        outfit.manBottom = req.body.manBottom;
+        outfit.save(function(err) {
+            console.log(err)
+            if (err) return res.redirect('/outfits/new');
             res.redirect(`/outfits/${outfit._id}`);
-        }
+        });
     });
 }
 
@@ -94,13 +74,11 @@ function show(req, res) {
 }
 
 function create(req, res) {
-    console.log(req.file);
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-    const outfit = new Outfit(req.body, {
-        image: req.file.filename
-    });
+    const outfit = new Outfit(req.body);
+    console.log(req.body.filename);
     outfit.save(function(err) {
         if (err) return res.redirect('/outfits/new');
         res.redirect('/outfits');
