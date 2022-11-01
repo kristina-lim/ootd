@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const outfitsCtrl = require('../controllers/outfits');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
+const upload = require('../config/upload');
 
 // GET /outfits (homepage: display all outfits)
 router.get('/', outfitsCtrl.index);
@@ -10,7 +11,7 @@ router.get('/new', ensureLoggedIn, outfitsCtrl.new);
 //GET /outfits/:id
 router.get('/:id', outfitsCtrl.show);
 //POST /outfits
-router.post('/', ensureLoggedIn, outfitsCtrl.create);
+router.post('/', upload.single('image'), ensureLoggedIn, outfitsCtrl.create);
 //EDIT /outfits/:id/edit
 router.get('/:id/edit', ensureLoggedIn, outfitsCtrl.edit);
 //UPDATE /outfits/:id

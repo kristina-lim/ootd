@@ -10,6 +10,26 @@ module.exports = {
     delete: deleteOutfit
 }
 
+// function store(req, res, next) {
+//     let outfit = new Outfit({
+//         title: req.body.title,
+//         agenda: req.body.agenda,
+//         description: req.body.description,
+//         mood: req.body.mood,
+//         date: req.body.date,
+//         outerwear: req.body.outerwear,
+//         top: req.body.top,
+//         womBottom: req.body.womBottom,
+//         manBottom: req.body.manBottom
+//     });
+//     if (req.file) {
+//         user.avatar = req.file.path;
+//     }
+//     outfit.save(function(err) {
+//         res.redirect('/outfits');
+//     });
+// }
+
 function deleteOutfit(req, res) {
     Outfit.findOneAndDelete({
        _id: req.params.id
@@ -74,10 +94,13 @@ function show(req, res) {
 }
 
 function create(req, res) {
+    console.log(req.file);
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-    const outfit = new Outfit(req.body);
+    const outfit = new Outfit(req.body, {
+        image: req.file.filename
+    });
     outfit.save(function(err) {
         if (err) return res.redirect('/outfits/new');
         res.redirect('/outfits');
