@@ -21,6 +21,7 @@ function deleteOutfit(req, res) {
 function update(req, res) {
     Outfit.findById(req.params.id, function(err, outfit) {
         outfit.title = req.body.title;
+        outfit.image = req.body.image;
         outfit.agenda = req.body.agenda;
         outfit.description = req.body.description;
         outfit.outerwear = req.body.outerwear;
@@ -75,6 +76,6 @@ function newOutfit(req, res, title) {
 
 function index(req, res) {
     Outfit.find({}, function(err, outfits) {
-        res.render('outfits/index', { title: 'My Fits', outfits });
+        res.render('outfits/index', { title: 'Fits', outfits });
     });
 }

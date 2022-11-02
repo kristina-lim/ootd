@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
-
+<h1></h1>
 <div class="container-column">
   <% outfits.forEach(function(o) { %>
     <div class="post-user"><img alt="avatar" src="<%= o.userAvatar %>" referrerpolicy="no-referrer"><%= o.userName %></div>
     <div><%= o.title %></div>
-    <div class="post-image"><img class="image" alt="image" src="<%= o.image %>" width="350" height="250"></div>
+    <div class="post-image"><img src="<%= o.image %>" width="450" height="450"></div>
     <div><a href="/outfits/<%= o._id %>">DETAILS</a></div>
   <% }); %>
 </div>
