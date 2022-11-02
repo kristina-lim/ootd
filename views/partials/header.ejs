@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar" style="background-color: #e3f2fd;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar w/ text</a>
+            <a class="navbar-brand" href="/outfits"><%- title %> 👗</a>
         <a href="/outfits" <%- title === 'Homepage' ? 'class="active"' : '' %>>HOMEPAGE</a>
         <% if (user) { %>
             <a href="/outfits/new" <%- title === 'Add Outfit' ? 'class="active"' : '' %>>ADD A FIT</a>

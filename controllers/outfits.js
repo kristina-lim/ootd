@@ -48,7 +48,7 @@ function edit(req, res) {
 function show(req, res) {
     Outfit.findById(req.params.id, function(err, outfit) {
         res.render('outfits/show', {
-            title: 'Outfit Details',
+            title: 'Fit Details',
             outfit
         });
     });
