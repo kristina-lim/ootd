@@ -2,7 +2,7 @@
 
 <section id="show-page">
     <div><h2><%= outfit.title %></h2></div>
-    <div><img src="<%= outfit.image %>" width="450" height="450"></div>
+    <div><img src="<%= outfit.image %>" width="450" height="450"></div><br>
     <div>Date Worn: <%= outfit.createdAt.toLocaleDateString() %></div><br>
     <div>What did you do today?</div>
     <div><%= outfit.agenda %></div><br>
@@ -21,9 +21,9 @@
     </div>
 
     <% if (user?._id.equals(outfit.user)) { %>
-      <button><a href="/outfits/<%= outfit._id %>/edit">Edit</a></button>
+      <button class="btn btn-outline-warning"><a href="/outfits/<%= outfit._id %>/edit" style="text-decoration:none">Edit</a></button>
       <form action="/outfits/<%= outfit._id %>?_method=DELETE" method="POST">
-        <input type="submit" value="x">
+        <input class="btn btn-outline-danger" type="submit" value="x">
       </form>
     <% } %>
   </section>

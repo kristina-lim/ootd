@@ -1,11 +1,11 @@
 <%- include('../partials/header') %>
-<h1></h1>
-<div class="container-column">
+
+<div class="form-group">
   <% outfits.forEach(function(o) { %>
     <div class="post-user"><img alt="avatar" src="<%= o.userAvatar %>" referrerpolicy="no-referrer"><%= o.userName %></div>
     <div><%= o.title %></div>
     <div class="post-image"><img src="<%= o.image %>" width="450" height="450"></div>
-    <div><a href="/outfits/<%= o._id %>">DETAILS</a></div>
+    <div><a class="btn btn-outline-info" href="/outfits/<%= o._id %>">DETAILS</a></div>
   <% }); %>
 </div>
   
