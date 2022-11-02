@@ -13,12 +13,12 @@
     <nav class="navbar" style="background-color: #e3f2fd;">
         <div class="container-fluid">
             <a href="/outfits" class="nav-title" style="text-decoration: none;"><%- title %> 👗</a>
-        <a href="/outfits" class="nav-homepage" style="text-decoration: none;" <%- title === 'Homepage' ? 'class="active"' : '' %>>HOMEPAGE</a>
-        <% if (user) { %>
-            <a href="/outfits/new" class="add-fit" style="text-decoration: none;" <%- title === 'Add Outfit' ? 'class="active"' : '' %>>ADD A FIT</a>
-            <a href="/logout" class="logout">LOG OUT</a>
-        <% } else { %>
-            <a href="/auth/google" class="login" style="text-decoration: none;">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-        <% } %>
+            <a href="/outfits" class="nav-homepage" style="text-decoration: none;" <%- title === 'Homepage' ? 'class="active"' : '' %>>HOMEPAGE</a>
+            <% if (user) { %>
+                <a href="/outfits/new" class="nav-add-fit" style="text-decoration: none;" <%- title === 'Add Outfit' ? 'class="active"' : '' %>>ADD A FIT</a>
+                <a href="/logout" class="logout">LOG OUT</a>
+            <% } else { %>
+                <a href="/auth/google" class="login" style="text-decoration: none;">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+            <% } %>
         </div>
     </nav>

@@ -8,10 +8,14 @@ a {
 }
 
 .nav-title {
-  font-size: 22px;
+  font-size: 25px;
 }
 
 .nav-homepage {
+  font-size: 17px;
+}
+
+.nav-add-fit {
   font-size: 17px;
 }
 
@@ -50,10 +54,28 @@ a {
   height: 40px;
 }
 
+.show-image {
+  margin-top: 35px;
+}
+
+#show-title {
+  margin-top: 25px;
+}
+
 #show-description {
   display: flex;
   flex-direction: column;
   text-align: left;
+}
+
+#edit-btn {
+  margin-top: 94px;
+  margin-left: 420px;
+}
+
+#delete-btn {
+  float: right;
+  margin-top:-45px;
 }
 
 .login {
@@ -70,6 +92,10 @@ a {
 
 .logout {
   font-size: 17px;
+}
+
+#comment-page {
+  margin-left: 10px;
 }
 
 .comment-user {

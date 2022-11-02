@@ -1,25 +1,6 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-    <!-- <div><h2><%= outfit.title %></h2></div>
-    <div><img src="<%= outfit.image %>" width="450" height="450"></div><br>
-    <div>Date Worn: <%= outfit.createdAt.toLocaleDateString() %></div><br>
-    <div>What did you do today?</div>
-    <div><%= outfit.agenda %></div><br>
-    <div>A description of your fit</div>
-    <div><%= outfit.description %></div><br>
-    <div>Mood</div>
-    <div><%= outfit.mood %></div><br>
-    <div>Outerwear: <%= outfit.outerwear %></div>
-    <div>Top: <%= outfit.top %></div>
-    <div>Bottom:
-      <% if (outfit.womBottom) {%>
-        <%= outfit.womBottom %>
-      <% } else if (outfit.manBottom) { %>
-        <%= outfit.manBottom %>
-      <% } %>
-    </div> -->
-
   <div class="container text-center">
     <div class="row g-2">
       <div class="col-6">
@@ -29,63 +10,79 @@
       </div>
       <div class="col-6">
         <div class="p-3">
-          <div><h2><%= outfit.title %></h2><br>
-          <div>Date Worn: <%= outfit.createdAt.toLocaleDateString() %></div><br>
+          <div id="show-title">
+            <h2><%= outfit.title %></h2>
+            <% if (user?._id.equals(outfit.user)) { %>
+              <form action="/outfits/<%= outfit._id %>?_method=DELETE" method="POST">
+                <input class="btn btn-outline-danger" id="delete-btn" type="submit" value="x">
+              </form>
+            <% } %>
+          </div><br>
+          <div>
+            <h6>Date Worn: <%= outfit.createdAt.toLocaleDateString() %></h6>
+          </div>
         <div class="p-3" id="show-description">
-          <div>What did you do today? <%= outfit.agenda %></div><br>
-          <div>A description of your fit: <%= outfit.description %></div><br>
-          <div>Mood: <%= outfit.mood %></div><br>
-          <div>Outerwear: <%= outfit.outerwear %></div><br>
-          <div>Top: <%= outfit.top %></div><br>
-          <div>Bottom:
+          <div><b>🪩 What did you do today? </b><%= outfit.agenda %></div><br>
+          <div><b>🕴🏻A description of your fit: </b><%= outfit.description %></div><br>
+          <div><b>🤠 Mood: </b><%= outfit.mood %></div><br>
+          <div><b>🧥 Outerwear: </b><%= outfit.outerwear %></div><br>
+          <div><b>👚 Top: </b><%= outfit.top %></div><br>
+          <div><b>👖 Bottom: </b>
             <% if (outfit.womBottom) {%>
               <%= outfit.womBottom %>
             <% } else if (outfit.manBottom) { %>
               <%= outfit.manBottom %>
             <% } %>
+          </div><br>
+          <div class="p-3" id="edit-btn">
+            <div>
+              <% if (user?._id.equals(outfit.user)) { %>
+                <button class="btn btn-outline-warning">
+                  <a href="/outfits/<%= outfit._id %>/edit" style="text-decoration:none">
+                    Edit</a>
+                  </button>
+              <% } %>
+            </div>
           </div>
         </div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-
-
-    <% if (user?._id.equals(outfit.user)) { %>
-      <button class="btn btn-outline-warning"><a href="/outfits/<%= outfit._id %>/edit" style="text-decoration:none">Edit</a></button>
-      <form action="/outfits/<%= outfit._id %>?_method=DELETE" method="POST">
-        <input class="btn btn-outline-danger" type="submit" value="x">
+<section id="comment-page">
+  <h3>Comments</h3><br>
+  <% if (user) { %>
+      <form id="add-comment-form" method="POST"
+          action="/outfits/<%= outfit._id %>/comments">
+          <label>
+            <h6>Rating:</h6>
+          </label>
+          <select name="rating">
+              <option value="👍">👍</option>
+              <option value="😍">😍</option>
+              <option value="🤩">🤩</option>
+              <option value="🥳">🥳</option>
+              <option value="🫶" selected>🫶</option>
+              <option value="🤤">🤤</option>
+              <option value="😊">😊</option>
+              <option value="👎">👎</option>
+          </select><br><br>
+          <label>
+            <h6>Comment:</h6>
+          </label><br>
+          <textarea name="content" cols="70" rows="10"></textarea><br>
+          <input class="btn btn-outline-success" type="submit" value="Add Comment">
       </form>
-    <% } %>
-  </section>
-
-<h2>Comments</h2>
-<% if (user) { %>
-    <form id="add-comment-form" method="POST"
-        action="/outfits/<%= outfit._id %>/comments">
-        <label>Rating:</label>
-        <select name="rating">
-            <option value="👍">👍</option>
-            <option value="😍">😍</option>
-            <option value="🤩">🤩</option>
-            <option value="🥳">🥳</option>
-            <option value="🫶" selected>🫶</option>
-            <option value="🤤">🤤</option>
-            <option value="😊">😊</option>
-            <option value="👎">👎</option>
-        </select><br>
-        <label>Comment:</label><br>
-        <textarea name="content" cols="50" rows="10"></textarea><br>
-        <input type="submit" value="Add Comment">
-    </form>
-<% } %>
+  <% } %>
+</section>
 
 <% if (outfit.comments.length) { %>
     <table>
         <thead>
           <tr>
-            <th>User</th>
+            <th></th>
             <th>Date</th>
             <th>Comment</th>
             <th>Rating</th>
