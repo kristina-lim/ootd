@@ -1,41 +1,48 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Source Code Pro', monospace;;
 }
 
 a {
   color: #00B7FF;
 }
 
+.nav-title {
+  font-size: 22px;
+}
+
+.nav-homepage {
+  font-size: 17px;
+}
+
 .fits {
   display: block;
 }
 
-.post-image {
+.post-title {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  margin: auto;
+  width: 40%;
+  padding-top: 20px;
 }
 
-.title {
+.post-image {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  padding-top: 20px;
+  margin: auto;
+  width: 40%;
 }
 
 .detail-button {
   position: relative;
-  left: -156px;
+  left: -103px;
   padding: 12px;
 }
 
 .post-user {
+  font-size: 16px;
   position: relative;
-  left: 62px;
-  padding: 10px;
+  left: 135px;
+  padding: 13px;
 }
 
 .post-user img {
@@ -44,6 +51,7 @@ a {
 }
 
 .login {
+  font-size: 17px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,6 +60,10 @@ a {
 
 .login img {
   height: 30px;
+}
+
+.logout {
+  font-size: 17px;
 }
 
 .comment-user {
