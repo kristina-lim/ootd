@@ -2,12 +2,12 @@
 
 <div class="form-group">
   <% outfits.forEach(function(o) { %>
-    <div class="post-title"><h3><%= o.title %></h3></div>
-    <div class="post-image"><img src="<%= o.image %>" width="450" height="450"></div>
+    <div class="index-title"><h3><%= o.title %></h3></div>
+    <div class="index-image"><img src="<%= o.image %>" width="450" height="450"></div>
     <div class="container text-center">
       <div class="row">
         <div class="col">
-          <div class="post-user"><img alt="avatar" src="<%= o.userAvatar %>" referrerpolicy="no-referrer"><%= o.userName %></div>
+          <div class="index-user"><img alt="avatar" src="<%= o.userAvatar %>" referrerpolicy="no-referrer"><%= o.userName %></div>
         </div>
         <div class="col">
           <div class="detail-button"><a class="btn btn-outline-info" href="/outfits/<%= o._id %>">DETAILS</a></div>
