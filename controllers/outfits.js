@@ -76,6 +76,6 @@ function newOutfit(req, res, title) {
 
 function index(req, res) {
     Outfit.find({}, function(err, outfits) {
-        res.render('outfits/index', { title: 'Fits', outfits });
+        res.render('outfits/index', { title: 'OOTD', outfits });
     });
 }
