@@ -9,15 +9,59 @@ a {
   color: #00B7FF;
 }
 
+.wrapper {
+  display: grid;
+  place-items: center;
+  padding: 200px;
+}
+
+.typing {
+  width: 29ch;
+  animation: typing 2s steps(29), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+.typing-2 {
+  width: 25ch;
+  animation: typing 2s steps(25), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 1.7em;
+}
+
+.typing-3 {
+  width: 24ch;
+  animation: typing 2s steps(24), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 1.5em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
 .nav-title {
   font-size: 25px;
 }
 
-.nav-homepage {
-  font-size: 17px;
-}
-
-.nav-add-fit {
+.nav-homepage, .nav-add-fit {
   font-size: 17px;
 }
 
@@ -70,12 +114,12 @@ article {
 }
 
 #show-page {
-  margin-top: 25px;
   text-align: center;
   border-left: absolute;
   border-radius: 10px;
   color: rgb(89, 42, 44);
   background-color: rgb(221, 243, 255);
+  padding-right: 50px;
 }
 
 #show-title {
@@ -102,12 +146,22 @@ article {
   margin-left: 410px;
 }
 
+#update-btn {
+  margin-left: 1045px;
+}
+
 #submit-btn {
   margin-left: 990px;
 }
 
 #comment-delete-btn {
   margin-left: 400px;
+}
+
+.login-btn {
+  font-size: 15px;
+  border-radius: 50px;
+  border-color: rgb(255, 255, 255);
 }
 
 #delete-btn {

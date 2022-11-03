@@ -1,13 +1,22 @@
 <%- include('../partials/header') %>
 
 <form id="edit-form" action="/outfits/<%= outfit._id%>?_method=PUT" method="POST">
-    <br><label>⚜️ Title:</label>
-    <input type="text" name="title" value="<%= outfit.title %>"><br><br>
-    <label for="image">🔗 Link your fit: <input type="text" name="image"></label><br><br>
-    <label>🪩 What did you do?</label><br>
-    <textarea name="agenda" cols="20" rows="5" placeholder="<%= outfit.agenda %>"></textarea><br><br>
-    <label>🕴🏻 Write a description of your fit:</label><br>
-    <textarea name="description" cols="20" rows="5" placeholder="<%= outfit.description %>"></textarea><br><br>
+    <div class="mb-3"><br>
+        <label for="exampleFormControlInput1" class="form-label">⚜️ Title</label>
+        <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="<%= outfit.title %>">
+    </div>
+    <div class="mb-3"><br>
+        <label for="exampleFormControlInput1" class="form-label">🔗 Link your fit:</label>
+        <input type="text" name="image" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <div class="mb-3"><br>
+        <label for="exampleFormControlTextarea1" class="form-label">🪩 What did you do?</label>
+        <textarea class="form-control" name="agenda" id="exampleFormControlTextarea1" rows="3" placeholder="<%= outfit.agenda %>"></textarea>
+    </div>
+    <div class="mb-3"><br>
+        <label for="exampleFormControlTextarea1" class="form-label">🕴🏻 Write a description of your fit:</label>
+        <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="<%= outfit.description %>"></textarea>
+    </div><br>
     <label>🤠 Mood
         <select name="mood">
             <option value="😊">😊</option>
@@ -77,7 +86,7 @@
             <option value="40">40</option>
         </select>
     </label><br><br>
-    <input class="btn btn-outline-success" type="submit" value="Update">
+    <input class="btn btn-outline-success" id="update-btn" type="submit" value="Update">
 </form>
 
 <%- include('../partials/footer') %>

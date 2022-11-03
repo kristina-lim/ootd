@@ -1,56 +1,57 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div class="container text-center">
-    <div class="row g-2">
-      <div class="col-6">
-        <div class="p-3">
-          <img src="<%= outfit.image %>" width="550" height="550" class="show-image">
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="p-3">
-          <div id="show-title">
-            <h2><%= outfit.title %></h2>
-            <% if (user?._id.equals(outfit.user)) { %>
-              <form action="/outfits/<%= outfit._id %>?_method=DELETE" method="POST">
-                <input class="btn btn-outline-danger" id="delete-btn" type="submit" value="x">
-              </form>
-            <% } %>
-          </div><br>
-          <div>
-            <h6>Date Worn: <%= outfit.createdAt.toLocaleDateString() %></h6>
+  <div class="container">
+    <div class="container text-center">
+      <div class="row g-2">
+        <div class="col-6">
+          <div class="p-3">
+            <img src="<%= outfit.image %>" width="550" height="550" class="show-image">
           </div>
-        <div class="p-3" id="show-description">
-          <div><b>🪩 What did you do today? </b><%= outfit.agenda %></div><br>
-          <div><b>🕴🏻 A description of your fit: </b><%= outfit.description %></div><br>
-          <div><b>🤠 Mood: </b><%= outfit.mood %></div><br>
-          <div><b>🧥 Outerwear: </b><%= outfit.outerwear %></div><br>
-          <div><b>👚 Top: </b><%= outfit.top %></div><br>
-          <div><b>👖 Bottom: </b>
-            <% if (outfit.womBottom) {%>
-              <%= outfit.womBottom %>
-            <% } else if (outfit.manBottom) { %>
-              <%= outfit.manBottom %>
-            <% } %>
-          </div><br>
-          <div class="p-3" id="edit-btn">
-            <div>
+        </div>
+        <div class="col-6">
+          <div class="p-3">
+            <div id="show-title">
+              <h2><%= outfit.title %></h2>
               <% if (user?._id.equals(outfit.user)) { %>
-                <button class="btn btn-outline-warning">
-                  <a href="/outfits/<%= outfit._id %>/edit" style="text-decoration:none">
-                    Edit</a>
-                  </button>
+                <form action="/outfits/<%= outfit._id %>?_method=DELETE" method="POST">
+                  <input class="btn btn-outline-danger" id="delete-btn" type="submit" value="x">
+                </form>
               <% } %>
+            </div><br>
+            <div>
+              <h6>Date Worn: <%= outfit.createdAt.toLocaleDateString() %></h6>
+            </div>
+          <div class="p-3" id="show-description">
+            <div><b>🪩 What did you do today? </b><%= outfit.agenda %></div><br>
+            <div><b>🕴🏻 A description of your fit: </b><%= outfit.description %></div><br>
+            <div><b>🤠 Mood: </b><%= outfit.mood %></div><br>
+            <div><b>🧥 Outerwear: </b><%= outfit.outerwear %></div><br>
+            <div><b>👚 Top: </b><%= outfit.top %></div><br>
+            <div><b>👖 Bottom: </b>
+              <% if (outfit.womBottom) {%>
+                <%= outfit.womBottom %>
+              <% } else if (outfit.manBottom) { %>
+                <%= outfit.manBottom %>
+              <% } %>
+            </div><br>
+            <div class="p-3" id="edit-btn">
+              <div>
+                <% if (user?._id.equals(outfit.user)) { %>
+                  <button class="btn btn-outline-warning">
+                    <a href="/outfits/<%= outfit._id %>/edit" style="text-decoration:none">
+                      Edit</a>
+                    </button>
+                <% } %>
+              </div>
             </div>
           </div>
-        </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <section id="comment-page">
   <h3>Comments</h3><br>
   <% if (user) { %>
@@ -121,6 +122,5 @@
           </table>
       <% } %>
 </section>
-
 
 <%- include('../partials/footer') %>
