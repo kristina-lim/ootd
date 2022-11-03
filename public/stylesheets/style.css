@@ -1,6 +1,8 @@
 body {
   padding: 50px;
-  font: 14px 'Source Code Pro', monospace;;
+  font: 14px 'Source Code Pro', monospace;
+  background-color: rgb(238, 234, 217);
+  color: rgb(89, 42, 44);
 }
 
 a {
@@ -42,6 +44,15 @@ a {
   padding: 12px;
 }
 
+#index-page {
+  margin-top: 25px;
+  text-align: center;
+  border-left: absolute;
+  border-radius: 10px;
+  color: rgb(rgb(89, 42, 44));
+  background-color: rgb(221, 243, 255);
+}
+
 .index-user {
   font-size: 16px;
   position: relative;
@@ -55,7 +66,16 @@ a {
 }
 
 .show-image {
-  margin-top: 35px;
+  margin-top: 11px;
+}
+
+#show-page {
+  margin-top: 25px;
+  text-align: center;
+  border-left: absolute;
+  border-radius: 10px;
+  color: rgb(89, 42, 44);
+  background-color: rgb(221, 243, 255);
 }
 
 #show-title {
@@ -68,9 +88,26 @@ a {
   text-align: left;
 }
 
+#show-rating-title {
+  margin-left: 500px;
+}
+
+#add-btn {
+  margin-top: 15px;
+  margin-left: 480px;
+}
+
 #edit-btn {
-  margin-top: 94px;
-  margin-left: 420px;
+  margin-top: 72px;
+  margin-left: 410px;
+}
+
+#submit-btn {
+  margin-left: 990px;
+}
+
+#comment-delete-btn {
+  margin-left: 400px;
 }
 
 #delete-btn {
@@ -95,7 +132,12 @@ a {
 }
 
 #comment-page {
-  margin-left: 10px;
+  text-align: center;
+  padding: 10px;
+  margin: 7px;
+  border-radius: 10px;
+  border-color: black;
+  background-color: rgb(221, 243, 255);
 }
 
 .comment-user {

@@ -1,16 +1,23 @@
 <%- include('../partials/header') %>
 
 <form id="new-form" action="/outfits" method="POST">
-    <br><label>Title:</label>
-    <input type="text" name="title"><br><br>
-    <label for="image">Link your fit:
-            <input type="text" name="image">
-    </label><br>
-    <label>What did you do?</label><br>
-    <textarea name="agenda" cols="20" rows="5"></textarea><br><br>
-    <label>Write a description of your fit:</label><br>
-    <textarea name="description" cols="20" rows="5"></textarea><br><br> <!--Type what you did throughout the day What brands did you wear?-->
-    <label>Mood
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <input type="text" name="title" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">🔗 Link your fit:</label>
+        <input type="text" name="image" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">🪩 What did you do?</label>
+        <textarea class="form-control" name="agenda" id="exampleFormControlTextarea1" rows="3" placeholder="Write about how your day went"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">🕴🏻 Write a description of your fit:</label>
+        <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="What brands did you wear? What accessories did you put on? What shoes did you wear with your fit? Be descriptive!"></textarea>
+    </div>
+    <label>🤠 Mood:
         <select name="mood">
             <option value="😊">😊</option>
             <option value="🥹">🥹</option>
@@ -22,11 +29,11 @@
             <option value="🤒">🤒</option>
         </select>
     </label><br>
-    <label>When did you wear this?
+    <label>📆 When did you wear this?
         <input type="date" name="date" value="<%= dtDate %>">
     </label><br><br>
     <label>Sizing (optional):</label><br>
-    <label>Outerwear
+    <label>🧥 Outerwear:
         <select name="outerwear">
             <option value="N/A">N/A</option>
             <option value="XS">XS</option>
@@ -36,7 +43,7 @@
             <option value="XL">XL</option>
         </select>
     </label><br>
-    <label>Top
+    <label>👚 Top:
         <select name="top">
             <option value="N/A">N/A</option>
             <option value="XS">XS</option>
@@ -46,7 +53,7 @@
             <option value="XL">XL</option>
         </select>
     </label><br>
-    <label>Bottom (women's size)
+    <label>👖 Bottom (women's size):
         <select name="womBottom">
             <option value="N/A">N/A</option>
             <option value="23">23</option>
@@ -62,7 +69,7 @@
             <option value="33">33</option>
         </select>
     </label>
-    <label>Bottom (men's size)
+    <label>👖 Bottom (men's size):
         <select name="manBottom">
             <option value="N/A">N/A</option>
             <option value="26">26</option>
@@ -78,7 +85,7 @@
             <option value="40">40</option>
         </select>
     </label><br><br>
-    <input class="btn btn-outline-success" type="submit" value="Add Outfit!">
+    <input class="btn btn-outline-success" id="submit-btn" type="submit" value="Add Outfit!">
 </form>
 
 <%- include('../partials/footer') %>
