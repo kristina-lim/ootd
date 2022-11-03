@@ -1,27 +1,31 @@
 <%- include('../partials/header') %>
 
 <form id="edit-form" action="/outfits/<%= outfit._id%>?_method=PUT" method="POST">
-    <br><label>Title:</label>
-    <input type="text" name="title" value="<%= title %>"><br><br>
-    <label for="image">Link your fit: <input type="text" name="image"></label><br><br>
-    <label>What did you do?</label><br>
+    <br><label>⚜️ Title:</label>
+    <input type="text" name="title" value="<%= outfit.title %>"><br><br>
+    <label for="image">🔗 Link your fit: <input type="text" name="image"></label><br><br>
+    <label>🪩 What did you do?</label><br>
     <textarea name="agenda" cols="20" rows="5" placeholder="<%= outfit.agenda %>"></textarea><br><br>
-    <label>Write a description of your fit:</label><br>
+    <label>🕴🏻 Write a description of your fit:</label><br>
     <textarea name="description" cols="20" rows="5" placeholder="<%= outfit.description %>"></textarea><br><br>
-    <label>Mood
+    <label>🤠 Mood
         <select name="mood">
             <option value="😊">😊</option>
             <option value="🥹">🥹</option>
             <option value="🤪">🤪</option>
+            <option value="🥸">🥸</option>
+            <option value="🥳">🥳</option>
             <option value="😍">😍</option>
             <option value="😤">😤</option>
+            <option value="🥺">🥺</option>
             <option value="😭">😭</option>
+            <option value="😵">😵</option>
             <option value="🫠">🫠</option>
             <option value="🤒">🤒</option>
         </select>
     </label><br><br>
     <label>Sizing (optional):</label><br>
-    <label>Outerwear
+    <label>🧥 Outerwear
         <select name="outerwear">
             <option value="N/A">N/A</option>
             <option value="XS">XS</option>
@@ -31,7 +35,7 @@
             <option value="XL">XL</option>
         </select>
     </label><br>
-    <label>Top
+    <label>👚 Top
         <select name="top">
             <option value="N/A">N/A</option>
             <option value="XS">XS</option>
@@ -41,7 +45,7 @@
             <option value="XL">XL</option>
         </select>
     </label><br>
-    <label>Bottom (women's size)
+    <label>👖 Bottom (women's size)
         <select name="womBottom">
             <option value="N/A">N/A</option>
             <option value="23">23</option>
@@ -57,7 +61,7 @@
             <option value="33">33</option>
         </select>
     </label>
-    <label>Bottom (men's size)
+    <label>👖 Bottom (men's size)
         <select name="manBottom">
             <option value="N/A">N/A</option>
             <option value="26">26</option>

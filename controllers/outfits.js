@@ -29,7 +29,6 @@ function update(req, res) {
         outfit.womBottom = req.body.womBottom;
         outfit.manBottom = req.body.manBottom;
         outfit.save(function(err) {
-            console.log(err)
             if (err) return res.redirect('/outfits/new');
             res.redirect(`/outfits/${outfit._id}`);
         });
@@ -39,7 +38,7 @@ function update(req, res) {
 function edit(req, res) {
     Outfit.findById(req.params.id, function(err, outfit) {
         res.render(`outfits/edit`, {
-            title: outfit.title,
+            title: 'Edit Post',
             outfit
         });
     });
@@ -59,7 +58,6 @@ function create(req, res) {
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
     const outfit = new Outfit(req.body);
-    console.log(req.body.filename);
     outfit.save(function(err) {
         if (err) return res.redirect('/outfits/new');
         res.redirect('/outfits');
@@ -71,11 +69,17 @@ function newOutfit(req, res, title) {
     const dt = newOutfit.date;
     let dtDate = `${dt.getFullYear()}-${(dt.getMonth() + 1).toString().padStart(2, '0')}`;
     dtDate += `-${dt.getDate().toString().padStart(2, '0')}T${dt.toTimeString().slice(0, 5)}`;
-    res.render('outfits/new', {title, dtDate});
+    res.render('outfits/new', {
+        title: 'Add Fit',
+        dtDate
+    });
 }
 
 function index(req, res) {
     Outfit.find({}, function(err, outfits) {
-        res.render('outfits/index', { title: 'OOTD', outfits });
+        res.render('outfits/index', {
+            title: 'OOTD',
+            outfits
+        });
     });
 }
