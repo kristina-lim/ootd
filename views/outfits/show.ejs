@@ -22,18 +22,18 @@
             <div>
               <h6>Date Worn: <%= outfit.date.toLocaleDateString() %></h6>
             </div>
-          <div class="p-3" id="show-description">
-            <div><b>🪩 What did you do today? </b><%= outfit.agenda %></div><br>
-            <div><b>🕴🏻 A description of your fit: </b><%= outfit.description %></div><br>
-            <div><b>🤠 Mood: </b><%= outfit.mood %></div><br>
-            <div><b>🧥 Outerwear: </b><%= outfit.outerwear %></div><br>
-            <div><b>👚 Top: </b><%= outfit.top %></div><br>
-            <div><b>👖 Bottom: </b>
-              <% if (outfit.womBottom) {%>
-                <%= outfit.womBottom %>
-              <% } else if (outfit.manBottom) { %>
-                <%= outfit.manBottom %>
-              <% } %>
+            <div class="p-3" id="show-description">
+              <div><b>🪩 What did you do today? </b><%= outfit.agenda %></div><br>
+              <div><b>🕴🏻 A description of your fit: </b><%= outfit.description %></div><br>
+              <div><b>🤠 Mood: </b><%= outfit.mood %></div><br>
+              <div><b>🧥 Outerwear: </b><%= outfit.outerwear %></div><br>
+              <div><b>👚 Top: </b><%= outfit.top %></div><br>
+              <div><b>👖 Bottom: </b>
+                <% if (outfit.womBottom) {%>
+                  <%= outfit.womBottom %>
+                <% } else if (outfit.manBottom) { %>
+                  <%= outfit.manBottom %>
+                <% } %>
             </div><br>
             <div class="p-3" id="edit-btn">
               <div>
