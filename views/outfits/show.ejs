@@ -91,7 +91,7 @@
     <% } %>
     <% if (outfit.comments.length) { %>
       <div class="container text-center" id="show-comment">
-        <div class="row align-items-end">
+        <!-- <div class="row align-items-end"> -->
           <% outfit.comments.forEach(function(c) { %>
             <div class="col">
               <section class="comment-user">
@@ -100,16 +100,13 @@
               </section>
             </div>
             <div class="col">
-                <p>Rating</p>
-                <%= c.rating %>
+              <p><%= c.createdAt.toLocaleDateString() %></p>
             </div>
             <div class="col">
-              <p>Comment</p>
-              <%= c.content %>
+              <p><%= c.content %></p>
             </div>
             <div class="col">
-              <p>Date</p>
-              <%= c.createdAt.toLocaleDateString() %>
+              <p><%= c.rating %></p>
             </div>
         </div>
       </div>         
