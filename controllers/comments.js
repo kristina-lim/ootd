@@ -27,7 +27,6 @@ function create(req, res) {
         req.body.userAvatar = req.user.avatar;
         outfit.comments.push(req.body);
         outfit.save(function(err) {
-            console.log(err);
             res.redirect(`/outfits/${outfit._id}`);
         });
     });
