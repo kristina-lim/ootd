@@ -19,27 +19,27 @@
 <img
     src="public/images/welcome-page.png"
     width="700"
-/><br><br>
+/><br>
 <h3 align="center">Homepage</h3>
 <img
   src="public/images/home-page.png"
   width="700"
-/><br><br>
+/><br>
 <h3 align="center">Post</h3>
 <img
   src="public/images/post-home-page.png"
   width="700"
-/><br><br>
+/><br>
 <h3 align="center">Show Page</h3>
 <img
   src="public/images/show-page.png"
   width="700"
-/><br><br>
+/><br>
 <h3 align="center">Comment Section</h3>
 <img
   src="public/images/comment-section.png"
   width="700"
-/><br><br>
+/><br>
 <h3 align="center">Add Fit</h3>
 <img
   src="public/images/add-fit.png"
@@ -57,7 +57,6 @@
 ## :spiral_notepad: Getting Started
 
  #### [Project planning and wireframing](https://trello.com/b/NHF7R4Js/project-2/)
- <br>
 
 ## :ice_cube: Icebox Features :ice_cube:
 * Add a like button with a page full of liked photos.
