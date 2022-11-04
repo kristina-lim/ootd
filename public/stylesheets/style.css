@@ -137,7 +137,7 @@ article {
 }
 
 #add-btn {
-  margin-top: 15px;
+  margin-top: 7px;
   margin-left: 480px;
 }
 
@@ -155,7 +155,8 @@ article {
 }
 
 #comment-delete-btn {
-  margin-left: 400px;
+  margin-left: 1000px;
+  margin-top: -70px;
 }
 
 .login-btn {
@@ -197,7 +198,7 @@ article {
   background-color: rgb(221, 243, 255);
 }
 
-.comment-user {
+#comment-user {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -2,22 +2,31 @@
 
 <form id="new-form" action="/outfits" method="POST">
     <div class="mb-3"><br>
-        <label for="exampleFormControlInput1" class="form-label">⚜️ Title</label>
+        <label for="exampleFormControlInput1" class="form-label">
+            ⚜️ Title
+        </label>
         <input type="text" name="title" class="form-control" id="exampleFormControlInput1">
     </div>
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">🔗 Link your fit:</label>
+        <label for="exampleFormControlInput1" class="form-label">
+            🔗 Link your fit:
+        </label>
         <input type="text" name="image" class="form-control" id="exampleFormControlInput1">
     </div><br>
-    <label>📆 When did you wear this?
+    <label>
+        📆 When did you wear this?
         <input type="date" name="date" value="<%= dtDate %>">
     </label><br><br>
     <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">🪩 What did you do?</label>
+        <label for="exampleFormControlTextarea1" class="form-label">
+            🪩 What did you do?
+        </label>
         <textarea class="form-control" name="agenda" id="exampleFormControlTextarea1" rows="3" placeholder="Write about how your day went"></textarea>
     </div><br>
     <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">🕴🏻 Write a description of your fit:</label>
+        <label for="exampleFormControlTextarea1" class="form-label">
+            🕴🏻 Write a description of your fit:
+        </label>
         <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="What brands did you wear? What accessories did you put on? What shoes did you wear with your fit? Be descriptive!"></textarea>
     </div><br>
     <label>🤠 Mood:

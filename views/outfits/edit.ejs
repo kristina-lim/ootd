@@ -2,19 +2,27 @@
 
 <form id="edit-form" action="/outfits/<%= outfit._id%>?_method=PUT" method="POST">
     <div class="mb-3"><br>
-        <label for="exampleFormControlInput1" class="form-label">⚜️ Title</label>
+        <label for="exampleFormControlInput1" class="form-label">
+            ⚜️ Title
+        </label>
         <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="<%= outfit.title %>">
     </div>
     <div class="mb-3"><br>
-        <label for="exampleFormControlInput1" class="form-label">🔗 Link your fit:</label>
+        <label for="exampleFormControlInput1" class="form-label">
+            🔗 Link your fit:
+        </label>
         <input type="text" name="image" class="form-control" id="exampleFormControlInput1">
     </div>
     <div class="mb-3"><br>
-        <label for="exampleFormControlTextarea1" class="form-label">🪩 What did you do?</label>
+        <label for="exampleFormControlTextarea1" class="form-label">
+            🪩 What did you do?
+        </label>
         <textarea class="form-control" name="agenda" id="exampleFormControlTextarea1" rows="3" placeholder="<%= outfit.agenda %>"></textarea>
     </div>
     <div class="mb-3"><br>
-        <label for="exampleFormControlTextarea1" class="form-label">🕴🏻 Write a description of your fit:</label>
+        <label for="exampleFormControlTextarea1" class="form-label">
+            🕴🏻 Write a description of your fit:
+        </label>
         <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="<%= outfit.description %>"></textarea>
     </div><br>
     <label>🤠 Mood

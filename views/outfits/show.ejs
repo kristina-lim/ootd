@@ -88,39 +88,44 @@
           <textarea name="content" cols="70" rows="10"></textarea><br>
           <input class="btn btn-outline-success" id="add-btn" type="submit" value="Add Comment">
       </form>
-      <% } %>
-      <% if (outfit.comments.length) { %>
-          <table>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th id="show-rating-title">Rating</th>
-                  <th>Comment</th>
-                  <th>Date</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody class="show-comment">
-                <% outfit.comments.forEach(function(c) { %>
-                  <tr>
-                    <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer"> <%= c.userName %></td>
-                    <td id="show-user-rating"><%= c.rating %></td>
-                    <td><%= c.content %></td>
-                    <td><%= c.createdAt.toLocaleDateString() %></td>
-                    <td>
-                      <% if (user?._id.equals(c.user)) { %>
-                        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                          <button class="btn btn-outline-danger" id="comment-delete-btn" type="submit">x</button>
-                        </form>
-                      <% } %>
-                    </td>
-                  </tr>
-                <% }); %>
-                <% } else { %>
-                  <h3>No Comments Yet</h3>
-              </tbody>
-          </table>
-      <% } %>
+    <% } %>
+    <% if (outfit.comments.length) { %>
+      <div class="container text-center" id="show-comment">
+        <div class="row align-items-end">
+          <% outfit.comments.forEach(function(c) { %>
+            <div class="col">
+              <section class="comment-user">
+                <img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer">
+                  <%= c.userName %>
+              </section>
+            </div>
+            <div class="col">
+                <p>Rating</p>
+                <%= c.rating %>
+            </div>
+            <div class="col">
+              <p>Comment</p>
+              <%= c.content %>
+            </div>
+            <div class="col">
+              <p>Date</p>
+              <%= c.createdAt.toLocaleDateString() %>
+            </div>
+        </div>
+      </div>         
+      <% if (user?._id.equals(c.user)) { %>
+        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+          <button class="btn btn-outline-danger" id="comment-delete-btn" type="submit">
+            x
+          </button>
+        </form>
+      <% } %>     
+        <% }); %>
+              <% } else { %>
+                <h3>No Comments Yet</h3>
+            </tbody>
+        </table>
+    <% } %>
 </section>
 
 <%- include('../partials/footer') %>
